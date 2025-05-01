@@ -1,32 +1,11 @@
-# This is a slightly more elaborate YAML file demonstrating
-# a few common YAML structures. It's still relatively simple
-# but introduces lists and nested mappings.
+name: Add Hello World Github Action
 
-greeting: "Hello, from a slightly bigger YAML!"
+on: [push]
 
-details:
-  name: "YAML Enthusiast"
-  version: 1.0
-  description: |
-    This example showcases basic YAML features
-    beyond a single key-value pair.
-
-features:
-  - Simple configuration
-  - Human-readable format
-  - Easy to parse by machines
-
-data_points:
-  - id: 1
-    value: 42
-  - id: 2
-    value: "some text"
-  - id: 3
-    value: true
-
-metadata:
-  created_at: "2025-05-01T23:34:00+05:30"
-  location:
-    city: Chandigarh
-    state: Punjab
-    country: India
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Say Hello
+      run: echo "Hello, World!"
